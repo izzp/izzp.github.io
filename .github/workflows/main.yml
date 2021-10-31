@@ -16,14 +16,6 @@ jobs:
         with:
           node-version: "14.x"
 
-      - name: Install Dependencies
-        run: yarn
-      - name: algolia
-        env:
-          HEXO_ALGOLIA_INDEXING_KEY: ${{ secrets.HEXO_ALGOLIA_INDEXING_KEY }}
-        run: yarn algolia
-      - run: yarn build
-
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
